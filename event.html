@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="تفاصيل الفعالية - فعاليات المدينة">تفاصيل الفعالية - فعاليات المدينة</title>
+    
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS المخصص -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+<body class="light-mode">
+    <!-- زر وضع الظلام -->
+    <div class="theme-switcher">
+        <button id="themeToggle" class="btn btn-outline-secondary">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- زر الترجمة -->
+    <div class="language-switcher">
+        <button id="languageToggle" class="btn btn-outline-secondary">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <!--<i class="fas fa-calendar-alt me-2"></i>-->
+<img src="assets/img/logo.png" alt="فعاليات المدينة" class="logo-img me-2" style="height: 40px;">
+                    <span data-translate="فعاليات المدينة">فعاليات المدينة</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" data-translate="الرئيسية">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html" data-translate="الفعاليات">الفعاليات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-translate="عن الدليل">عن الدليل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-translate="اتصل بنا">اتصل بنا</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Event Details -->
+        <section class="event-details py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html" data-translate="الرئيسية">الرئيسية</a></li>
+                                <li class="breadcrumb-item"><a href="events.html" data-translate="الفعاليات">الفعاليات</a></li>
+                                <li class="breadcrumb-item active" id="eventBreadcrumb" data-translate="تفاصيل الفعالية">تفاصيل الفعالية</li>
+                            </ol>
+                        </nav>
+                        
+                        <div id="eventDetail">
+                         
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <!-- معلومات سريعة -->
+                        <div class="card event-info-card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate="معلومات سريعة">معلومات سريعة</h5>
+                                <div class="quick-info">
+                                    <div class="info-item d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted" data-translate="التصنيف:">التصنيف:</span>
+                                        <span id="infoCategory" class="fw-bold"></span>
+                                    </div>
+                                    <div class="info-item d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted" data-translate="السعر:">السعر:</span>
+                                        <span id="infoPrice" class="fw-bold"></span>
+                                    </div>
+                                    <div class="info-item d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted" data-translate="المقاعد:">المقاعد:</span>
+                                        <span id="infoSeats" class="fw-bold" data-translate="محدودة">محدودة</span>
+                                    </div>
+                                    <div class="info-item d-flex justify-content-between py-2">
+                                        <span class="text-muted" data-translate="العمر:">العمر:</span>
+                                        <span id="infoAge" class="fw-bold" data-translate="جميع الأعمار">جميع الأعمار</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- زر المشاركة -->
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <h6 data-translate="شارك هذه الفعالية">شارك هذه الفعالية</h6>
+                                <div class="social-share mt-3">
+                                    <button class="btn btn-outline-primary btn-sm me-2 share-btn" data-platform="facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button class="btn btn-outline-info btn-sm me-2 share-btn" data-platform="twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm me-2 share-btn" data-platform="whatsapp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm share-btn" data-platform="copy">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- فعاليات مشابهة -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate="فعاليات مشابهة">فعاليات مشابهة</h5>
+                                <div id="relatedEvents">
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 data-translate="فعاليات المدينة">فعاليات المدينة</h5>
+                    <p data-translate="دليلك الشامل لاكتشاف الفعاليات في مدينتك">دليلك الشامل لاكتشاف الفعاليات في مدينتك</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="روابط سريعة">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white" data-translate="الرئيسية">الرئيسية</a></li>
+                        <li><a href="events.html" class="text-white" data-translate="الفعاليات">الفعاليات</a></li>
+                        <li><a href="about.html" class="text-white" data-translate="عن الدليل">عن الدليل</a></li>
+                        <li><a href="contact.html" class="text-white" data-translate="اتصل بنا">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="تابعنا">تابعنا</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/966551234567" target="_blank" class="text-white me-3">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 <span data-translate="فعاليات المدينة">فعاليات المدينة</span>. <span data-translate="جميع الحقوق محفوظة">جميع الحقوق محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal للتسجيل -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translate="التسجيل في الفعالية">التسجيل في الفعالية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label" data-translate="الاسم الكامل">الاسم الكامل</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label" data-translate="البريد الإلكتروني">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPhone" class="form-label" data-translate="رقم الهاتف">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="registerPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerTickets" class="form-label" data-translate="عدد التذاكر">عدد التذاكر</label>
+                            <select class="form-select" id="registerTickets" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-translate="إلغاء">إلغاء</button>
+                    <button type="button" class="btn btn-primary" id="confirmRegister" data-translate="تأكيد التسجيل">تأكيد التسجيل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر العودة للأعلى -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/event-details.js"></script>
+    <script src="assets/js/translation.js"></script>
+</body>
+</html>

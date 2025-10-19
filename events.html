@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="الفعاليات - فعاليات المدينة">الفعاليات - فعاليات المدينة</title>
+    
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS المخصص -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+<body class="light-mode">
+    <!-- زر وضع الظلام -->
+    <div class="theme-switcher">
+        <button id="themeToggle" class="btn btn-outline-secondary">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- زر الترجمة -->
+    <div class="language-switcher">
+        <button id="languageToggle" class="btn btn-outline-secondary">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <!--<i class="fas fa-calendar-alt me-2"></i>-->
+<img src="assets/img/logo.png" alt="فعاليات المدينة" class="logo-img me-2" style="height: 40px;">
+                    <span data-translate="فعاليات المدينة">فعاليات المدينة</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" data-translate="الرئيسية">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="events.html" data-translate="الفعاليات">الفعاليات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-translate="عن الدليل">عن الدليل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-translate="اتصل بنا">اتصل بنا</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-3" data-translate="فعاليات المدينة">فعاليات المدينة</h1>
+                        <p class="lead mb-4" data-translate="اكتشف جميع الفعاليات والأنشطة المتاحة في مدينتك. ثقافية، رياضية، تعليمية، ترفيهية وغيرها الكثير">اكتشف جميع الفعاليات والأنشطة المتاحة في مدينتك. ثقافية، رياضية، تعليمية، ترفيهية وغيرها الكثير</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="events-stats">
+                            <div class="row text-white">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="mb-0" id="totalEvents">45</h3>
+                                        <small data-translate="فعالية">فعالية</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="mb-0">6</h3>
+                                        <small data-translate="فئات">فئات</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="mb-0">6</h3>
+                                        <small data-translate="منظم">منظم</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Filters -->
+        <section class="advanced-filters py-4 bg-light">
+            <div class="container">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold" data-translate="التصنيف">التصنيف</label>
+                        <select class="form-select" id="categoryFilter">
+                            <option value="" data-translate="جميع التصنيفات">جميع التصنيفات</option>
+                            <option value="ثقافية" data-translate="🎵 ثقافية">🎵 ثقافية</option>
+                            <option value="رياضية" data-translate="⚽ رياضية">⚽ رياضية</option>
+                            <option value="تعليمية" data-translate="🎓 تعليمية">🎓 تعليمية</option>
+                            <option value="ترفيهية" data-translate="🎪 ترفيهية">🎪 ترفيهية</option>
+                            <option value="اجتماعية" data-translate="👥 اجتماعية">👥 اجتماعية</option>
+                            <option value="تطوعية" data-translate="🤝 تطوعية">🤝 تطوعية</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold" data-translate="الفترة">الفترة</label>
+                        <select class="form-select" id="dateFilter">
+                            <option value="" data-translate="جميع التواريخ">جميع التواريخ</option>
+                            <option value="today" data-translate="اليوم">اليوم</option>
+                            <option value="tomorrow" data-translate="غداً">غداً</option>
+                            <option value="week" data-translate="هذا الأسبوع">هذا الأسبوع</option>
+                            <option value="month" data-translate="هذا الشهر">هذا الشهر</option>
+                            <option value="upcoming" data-translate="القادمة">القادمة</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold" data-translate="السعر">السعر</label>
+                        <select class="form-select" id="priceFilter">
+                            <option value="" data-translate="جميع الأسعار">جميع الأسعار</option>
+                            <option value="free" data-translate="مجانية">مجانية</option>
+                            <option value="paid" data-translate="مدفوعة">مدفوعة</option>
+                            <option value="0-50" data-translate="0 - 50 دولار امريكي">0 - 50 دولار امريكي</option>
+                            <option value="50-100" data-translate="50 - 100 دولار امريكي">50 - 100 دولار امريكي</option>
+                            <option value="100+" data-translate="أكثر من 100 دولار امريكي">أكثر من 100 دولار امريكي</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold" data-translate="البحث">البحث</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="ابحث عن فعالية..." data-translate="ابحث عن فعالية...">
+                            <button class="btn btn-outline-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold" data-translate="الترتيب">الترتيب</label>
+                        <div class="d-flex gap-2">
+                            <select class="form-select" id="sortBy">
+                                <option value="date-asc" data-translate="الأحدث أولاً">الأحدث أولاً</option>
+                                <option value="date-desc" data-translate="الأقدم أولاً">الأقدم أولاً</option>
+                                <option value="name" data-translate="حسب الاسم">حسب الاسم</option>
+                                <option value="price" data-translate="حسب السعر">حسب السعر</option>
+                                <option value="popular" data-translate="الأكثر شعبية">الأكثر شعبية</option>
+                            </select>
+                            <button class="btn btn-primary" id="applyFilters">
+                                <i class="fas fa-filter"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Category Filters -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-primary btn-sm active-filter" data-category="" data-translate="الكل">
+                                الكل
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm" data-category="ثقافية">
+                                <i class="fas fa-music me-1"></i><span data-translate="ثقافية">ثقافية</span>
+                            </button>
+                            <button class="btn btn-outline-success btn-sm" data-category="رياضية">
+                                <i class="fas fa-running me-1"></i><span data-translate="رياضية">رياضية</span>
+                            </button>
+                            <button class="btn btn-outline-info btn-sm" data-category="تعليمية">
+                                <i class="fas fa-graduation-cap me-1"></i><span data-translate="تعليمية">تعليمية</span>
+                            </button>
+                            <button class="btn btn-outline-warning btn-sm" data-category="ترفيهية">
+                                <i class="fas fa-utensils me-1"></i><span data-translate="ترفيهية">ترفيهية</span>
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm" data-category="اجتماعية">
+                                <i class="fas fa-users me-1"></i><span data-translate="اجتماعية">اجتماعية</span>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm" data-category="تطوعية">
+                                <i class="fas fa-hands-helping me-1"></i><span data-translate="تطوعية">تطوعية</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Grid -->
+        <section class="events-grid-section py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 id="eventsCount"><span data-translate="عرض">عرض</span> <span id="eventsNumber">12</span> <span data-translate="فعالية">فعالية</span></h4>
+                            <div class="view-options">
+                                <div class="btn-group" role="group">
+                                    <input type="radio" class="btn-check" name="viewMode" id="gridView" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="gridView">
+                                        <i class="fas fa-th"></i>
+                                    </label>
+                                    <input type="radio" class="btn-check" name="viewMode" id="listView" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="listView">
+                                        <i class="fas fa-list"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="row" id="eventsContainer">
+                  
+                </div>
+
+                <!-- Load More -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-outline-primary" id="loadMore">
+                            <i class="fas fa-plus me-2"></i><span data-translate="تحميل المزيد">تحميل المزيد</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- صنيفات الفعاليات -->
+        <section class="categories-summary py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-translate="تصنيفات الفعاليات">تصنيفات الفعاليات</h2>
+                <div class="row g-4">
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-music fa-2x text-primary"></i>
+                            </div>
+                            <h5 data-translate="ثقافية">ثقافية</h5>
+                            <p class="text-muted mb-2" data-translate="12 فعالية">12 فعالية</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-primary" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-running fa-2x text-success"></i>
+                            </div>
+                            <h5 data-translate="رياضية">رياضية</h5>
+                            <p class="text-muted mb-2" data-translate="8 فعاليات">8 فعاليات</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-success" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-graduation-cap fa-2x text-info"></i>
+                            </div>
+                            <h5 data-translate="تعليمية">تعليمية</h5>
+                            <p class="text-muted mb-2" data-translate="15 فعالية">15 فعالية</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-utensils fa-2x text-warning"></i>
+                            </div>
+                            <h5 data-translate="ترفيهية">ترفيهية</h5>
+                            <p class="text-muted mb-2" data-translate="10 فعاليات">10 فعاليات</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-warning" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-users fa-2x text-secondary"></i>
+                            </div>
+                            <h5 data-translate="اجتماعية">اجتماعية</h5>
+                            <p class="text-muted mb-2" data-translate="6 فعاليات">6 فعاليات</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-secondary" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="category-summary-card text-center p-3">
+                            <div class="category-icon mb-3">
+                                <i class="fas fa-hands-helping fa-2x text-danger"></i>
+                            </div>
+                            <h5 data-translate="تطوعية">تطوعية</h5>
+                            <p class="text-muted mb-2" data-translate="4 فعاليات">4 فعاليات</p>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 data-translate="فعاليات المدينة">فعاليات المدينة</h5>
+                    <p data-translate="دليلك الشامل لاكتشاف الفعاليات في مدينتك">دليلك الشامل لاكتشاف الفعاليات في مدينتك</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="روابط سريعة">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white" data-translate="الرئيسية">الرئيسية</a></li>
+                        <li><a href="events.html" class="text-white" data-translate="الفعاليات">الفعاليات</a></li>
+                        <li><a href="about.html" class="text-white" data-translate="عن الدليل">عن الدليل</a></li>
+                        <li><a href="contact.html" class="text-white" data-translate="اتصل بنا">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="تابعنا">تابعنا</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/CityEventsGuide" target="_blank" class="text-white me-3">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/966551234567" target="_blank" class="text-white me-3">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 <span data-translate="فعاليات المدينة">فعاليات المدينة</span>. <span data-translate="جميع الحقوق محفوظة">جميع الحقوق محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal لموقع الفعالية -->
+    <div class="modal fade" id="locationModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="locationModalLabel" data-translate="موقع الفعالية">موقع الفعالية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="locationModalBody">
+                    <!-- محتوى المودال -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-translate="إغلاق">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر العودة للأعلى -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/events-page.js"></script>
+    <script src="assets/js/translation.js"></script>
+</body>
+</html>
